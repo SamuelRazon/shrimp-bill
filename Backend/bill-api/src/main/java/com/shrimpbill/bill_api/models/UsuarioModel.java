@@ -1,17 +1,21 @@
-package com.shrimpbill.bill_api.controllers;
+package com.shrimpbill.bill_api.models;
+
+import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 
 @Entity
 @Table(name = "usuario")
 public class UsuarioModel {
-    // Declaraciones
+    // Declaraciones de atributos iguales a la tabla de la base de datos
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
@@ -29,53 +33,79 @@ public class UsuarioModel {
     @Column(unique = true,nullable = false)
     private String password;
 
-    //
-    private long fk_domicilio;
-    private long fk_datos_fiscales;
+    /* Relaciones entre tablas */
+    /* Uno a Uno */
+    @OneToOne(mappedBy = "usuario")
+    private DomicilioModel domicilio;
+
+    @OneToOne(mappedBy = "usuario")
+    private DatosFiscalesUsuarioModel datosfiscales;
+
+    /* Relacion uno a muchos */
+    @OneToMany(mappedBy = "usuario")
+    private List<FacturaModel> facturas;
 
 
-    // Getters y setters
+    // Getters y setters para la primary key
     public long getId() {
         return id;
     }
     public void setId(long id) {
         this.id = id;
     }
+    // Getter y Setter para nombre
     public String getNombre() {
         return nombre;
     }
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+    // Getter y Setter para apellidos
     public String getApellidos() {
         return apellidos;
     }
     public void setApellidos(String apellidos) {
         this.apellidos = apellidos;
     }
+    // Getter y Setter para email
     public String getEmail() {
         return email;
     }
     public void setEmail(String email) {
         this.email = email;
     }
+    // Getter y Setter para password
     public String getPassword() {
         return password;
     }
     public void setPassword(String password) {
         this.password = password;
     }
-    public long getFk_domicilio() {
-        return fk_domicilio;
+    // Getter y Setter para domicilio
+    public DomicilioModel getDomicilio() {
+        return domicilio;
     }
-    public void setFk_domicilio(long fk_domicilio) {
-        this.fk_domicilio = fk_domicilio;
+
+    public void setDomicilio(DomicilioModel domicilio) {
+        this.domicilio = domicilio;
     }
-    public long getFk_datos_fiscales() {
-        return fk_datos_fiscales;
+
+    // Getter y Setter para datosfiscales
+    public DatosFiscalesUsuarioModel getDatosfiscales() {
+        return datosfiscales;
     }
-    public void setFk_datos_fiscales(long fk_datos_fiscales) {
-        this.fk_datos_fiscales = fk_datos_fiscales;
+
+    public void setDatosfiscales(DatosFiscalesUsuarioModel datosfiscales) {
+        this.datosfiscales = datosfiscales;
     }
+    //Getter y setter
+    public List<FacturaModel> getFacturas() {
+        return facturas;
+    }
+    
+    public void setFacturas(List<FacturaModel> facturas) {
+        this.facturas = facturas;
+    }
+    
 
 }
