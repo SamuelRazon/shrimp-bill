@@ -6,20 +6,20 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "envios_primera_plus")
-public class EnviosPrimeraPlus {
+public class EnviosPrimeraPlusModel {
     // Declaraciones
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
     private long id;
 
-    /* Relacion uno a uno */
-    @OneToOne
+    /* Relacion muchos a uno */
+    @ManyToOne
     @JoinColumn(name = "fk_compra")
     private CompraModel compra;
 

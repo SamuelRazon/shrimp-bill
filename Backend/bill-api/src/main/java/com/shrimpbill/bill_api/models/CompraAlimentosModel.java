@@ -1,12 +1,14 @@
 package com.shrimpbill.bill_api.models;
 
+import java.time.LocalDateTime;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -18,8 +20,11 @@ public class CompraAlimentosModel {
     @Column(unique = true, nullable = false)
     private long id;
 
-    /* Relacion uno a uno */
-    @OneToOne
+    @Column(nullable = false)
+    private LocalDateTime fecha;
+
+    /* Relacion muchos a uno */
+    @ManyToOne
     @JoinColumn(name = "fk_compra")
     private CompraModel compra;
 
@@ -31,6 +36,14 @@ public class CompraAlimentosModel {
     }
     public void setId(long id) {
         this.id = id;
+    }
+
+    // Getter y Setter para fecha
+    public LocalDateTime getFecha() {
+        return this.fecha;
+    }
+    public void setFecha(LocalDateTime fecha) {
+        this.fecha = fecha;
     }
 
     // Getter y Setter para compra

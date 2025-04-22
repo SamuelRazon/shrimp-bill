@@ -5,9 +5,12 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "compra")
@@ -32,16 +35,21 @@ public class CompraModel {
 
     /* Relaciones entre tablas */
     /* Uno a Uno */
-    @OneToOne(mappedBy = "compra")
-    private BoletoViajeModel boletoviaje;
+    @OneToMany(mappedBy = "compra")
+    private List<BoletoViajeModel> boletoviaje;
 
     /* Uno a Uno */
-    @OneToOne(mappedBy = "compra")
-    private CompraAlimentosModel compraalimentos;
+    @OneToMany(mappedBy = "compra")
+    private List<CompraAlimentosModel> compraalimentos;
 
     /* Uno a Uno */
-    @OneToOne(mappedBy = "compra")
-    private EnviosPrimeraPlus enviosprimeraplus;
+    @OneToMany(mappedBy = "compra")
+    private List<EnviosPrimeraPlusModel> enviosprimeraplus;
+
+    /* Relaciones uno a uno */
+    @ManyToOne
+    @JoinColumn(name = "fk_factura")
+    private FacturaModel factura;
 
     /* Getters y setters */
 
@@ -86,26 +94,34 @@ public class CompraModel {
     }
 
     // Getter y Setter para boletoviaje
-    public BoletoViajeModel getBoletoviaje() {
+    public List<BoletoViajeModel> getBoletoviaje() {
         return boletoviaje;
     }
-    public void setBoletoviaje(BoletoViajeModel boletoviaje) {
+    public void setBoletoviaje(List<BoletoViajeModel> boletoviaje) {
         this.boletoviaje = boletoviaje;
     }
 
     // Getter y Setter para compraalimentos
-    public CompraAlimentosModel getCompraalimentos() {
+    public List<CompraAlimentosModel> getCompraalimentos() {
         return compraalimentos;
     }
-    public void setCompraalimentos(CompraAlimentosModel compraalimentos) {
+    public void setCompraalimentos(List<CompraAlimentosModel> compraalimentos) {
         this.compraalimentos = compraalimentos;
     }
 
+    // Getter y Setter para factura
+    public FacturaModel getFactura() {
+        return factura;
+    }
+    public void setFactura(FacturaModel factura) {
+        this.factura = factura;
+    }
+
     // Getter y Setter para enviosprimeraplus
-    public EnviosPrimeraPlus getEnviosprimeraplus() {
+    public List<EnviosPrimeraPlusModel> getEnviosprimeraplus() {
         return enviosprimeraplus;
     }
-    public void setEnviosprimeraplus(EnviosPrimeraPlus enviosprimeraplus) {
+    public void setEnviosprimeraplus(List<EnviosPrimeraPlusModel> enviosprimeraplus) {
         this.enviosprimeraplus = enviosprimeraplus;
     }
 }
