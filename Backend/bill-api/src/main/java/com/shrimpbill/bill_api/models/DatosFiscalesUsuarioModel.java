@@ -34,7 +34,7 @@ public class DatosFiscalesUsuarioModel {
 
      /* Relacion uno a uno */
      @OneToOne
-     @JoinColumn(name = "fk_domicilio")
+     @JoinColumn(name = "fk_usuario")
      private UsuarioModel usuario;
 
     /* Getters y setters */
@@ -46,6 +46,15 @@ public class DatosFiscalesUsuarioModel {
     public void setId(long id) {
         this.id = id;
     }
+    
+    // Getter y Setter para rfc
+    public String getRfc() {
+        return rfc;
+    }
+    public void setrfc(String rfc) {
+        this.rfc = rfc;
+    }
+
     // Getter y Setter para razon_social
     public String getRazonSocial() {
         return razon_social;

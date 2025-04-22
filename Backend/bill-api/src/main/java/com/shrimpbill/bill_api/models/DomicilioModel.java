@@ -41,7 +41,7 @@ public class DomicilioModel {
  
      /* Relacion uno a uno */
      @OneToOne
-     @JoinColumn(name = "fk_domicilio")
+     @JoinColumn(name = "fk_usuario")
      private UsuarioModel usuario;
 
 

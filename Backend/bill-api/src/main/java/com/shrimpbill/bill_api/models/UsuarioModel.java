@@ -45,6 +45,10 @@ public class UsuarioModel {
     @OneToMany(mappedBy = "usuario")
     private List<FacturaModel> facturas;
 
+    /* Relacion uno a muchos */
+    @OneToMany(mappedBy = "usuario")
+    private List<CfdiModel> cfdi;
+    
 
     // Getters y setters para la primary key
     public long getId() {
