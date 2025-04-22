@@ -34,19 +34,19 @@ public class CompraModel {
     private LocalDateTime fecha;
 
     /* Relaciones entre tablas */
-    /* Uno a Uno */
+    /* Uno a Muchos */
     @OneToMany(mappedBy = "compra")
     private List<BoletoViajeModel> boletoviaje;
 
-    /* Uno a Uno */
+    /* Uno a Muchos */
     @OneToMany(mappedBy = "compra")
     private List<CompraAlimentosModel> compraalimentos;
 
-    /* Uno a Uno */
+    /* Uno a Muchos */
     @OneToMany(mappedBy = "compra")
     private List<EnviosPrimeraPlusModel> enviosprimeraplus;
 
-    /* Relaciones uno a uno */
+    /* Relaciones muchos a uno */
     @ManyToOne
     @JoinColumn(name = "fk_factura")
     private FacturaModel factura;

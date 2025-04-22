@@ -30,7 +30,7 @@ public class ComplementoIneModel {
     /* Relaciones uno a uno */
     @OneToOne
     @JoinColumn(name = "fk_datos_fiscales")
-    private FacturaModel factura;
+    private DatosFiscalesFacturaModel datos_fiscales_factura;
 
     @OneToOne(mappedBy = "complemento_ine")
     private ComplementoIneEntidadesModel complineentidades;
@@ -70,11 +70,11 @@ public class ComplementoIneModel {
     }
 
     // Getter y Setter para factura
-    public FacturaModel getFactura() {
-        return factura;
+    public DatosFiscalesFacturaModel getDatosFiscales() {
+        return this.datos_fiscales_factura;
     }
-    public void setFactura(FacturaModel factura) {
-        this.factura = factura;
+    public void setDatosFiscales(DatosFiscalesFacturaModel datos_fiscales_factura) {
+        this.datos_fiscales_factura = datos_fiscales_factura;
     }
 
     // Getter y Setter para complineentidades

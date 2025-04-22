@@ -1,5 +1,6 @@
 package com.shrimpbill.bill_api.models;
 
+import java.time.LocalDateTime;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -24,6 +25,9 @@ public class CfdiModel {
 
     @Column(nullable = false)
     private String xml_path;
+
+    @Column(nullable = false)
+    private LocalDateTime fecha;
 
     /* Relaciones uno a uno */
     @OneToOne
@@ -59,6 +63,14 @@ public class CfdiModel {
     }
     public void setXmlPath(String xml_path) {
         this.xml_path = xml_path;
+    }
+
+    // Getter y Setter para fecha
+    public LocalDateTime getFecha() {
+        return fecha;
+    }
+    public void setFecha(LocalDateTime fecha) {
+        this.fecha = fecha;
     }
 
     // Getter y Setter para factura
