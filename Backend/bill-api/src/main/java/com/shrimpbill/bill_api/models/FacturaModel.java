@@ -22,7 +22,7 @@ public class FacturaModel {
     @Column(nullable = false)
     private String token;
 
-        /* Relacion uno a uno */
+    /* Relacion uno a uno */
     @OneToOne(mappedBy = "factura")
     private CfdiModel cfdi;
 

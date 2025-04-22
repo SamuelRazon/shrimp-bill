@@ -22,4 +22,22 @@ public class EnviosPrimeraPlus {
     @OneToOne
     @JoinColumn(name = "fk_compra")
     private CompraModel compra;
+
+    /* Getters y setters */
+
+    // Getter y Setter para id
+    public long getId() {
+        return id;
+    }
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    // Getter y Setter para compra
+    public CompraModel getCompra() {
+        return compra;
+    }
+    public void setCompra(CompraModel compra) {
+        this.compra = compra;
+    }
 }

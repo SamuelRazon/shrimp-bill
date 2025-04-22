@@ -9,33 +9,31 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
-
 @Entity
 @Table(name = "datos_fiscales_usuario")
 public class DatosFiscalesUsuarioModel {
-     // Declaraciones
-     @Id
-     @GeneratedValue(strategy = GenerationType.IDENTITY)
-     @Column(unique = true, nullable = false)
-     private long id;
- 
-     @Column(nullable = false)
-     private String rfc;
+    // Declaraciones
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(unique = true, nullable = false)
+    private long id;
 
-     @Column(nullable = false)
-     private String razon_social;
+    @Column(nullable = false)
+    private String rfc;
 
-     @Column(nullable = false)
-     private String regimen_fiscal;
+    @Column(nullable = false)
+    private String razon_social;
 
-     @Column(nullable = false)
-     private String cfdi;
+    @Column(nullable = false)
+    private String regimen_fiscal;
 
+    @Column(nullable = false)
+    private String cfdi;
 
-     /* Relacion uno a uno */
-     @OneToOne
-     @JoinColumn(name = "fk_usuario")
-     private UsuarioModel usuario;
+    /* Relacion uno a uno */
+    @OneToOne
+    @JoinColumn(name = "fk_usuario")
+    private UsuarioModel usuario;
 
     /* Getters y setters */
 
@@ -46,12 +44,12 @@ public class DatosFiscalesUsuarioModel {
     public void setId(long id) {
         this.id = id;
     }
-    
+
     // Getter y Setter para rfc
     public String getRfc() {
         return rfc;
     }
-    public void setrfc(String rfc) {
+    public void setRfc(String rfc) {
         this.rfc = rfc;
     }
 
@@ -71,7 +69,7 @@ public class DatosFiscalesUsuarioModel {
         this.regimen_fiscal = regimen_fiscal;
     }
 
-     // Getter y Setter para cfdi
+    // Getter y Setter para cfdi
     public String getCfdi() {
         return cfdi;
     }
@@ -79,12 +77,11 @@ public class DatosFiscalesUsuarioModel {
         this.cfdi = cfdi;
     }
 
-    // Getter y setter para el usuario
-    public void setUsuario(UsuarioModel usuario){
-        this.usuario = usuario;
+    // Getter y Setter para usuario
+    public UsuarioModel getUsuario() {
+        return usuario;
     }
-
-    public UsuarioModel getUsuario(){
-        return this.usuario;
+    public void setUsuario(UsuarioModel usuario) {
+        this.usuario = usuario;
     }
 }

@@ -11,7 +11,6 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
-
 @Entity
 @Table(name = "usuario")
 public class UsuarioModel {
@@ -45,18 +44,19 @@ public class UsuarioModel {
     @OneToMany(mappedBy = "usuario")
     private List<FacturaModel> facturas;
 
-    /* Relacion uno a muchos */
     @OneToMany(mappedBy = "usuario")
     private List<CfdiModel> cfdi;
-    
 
-    // Getters y setters para la primary key
+    /* Getters y setters */
+
+    // Getter y Setter para id
     public long getId() {
         return id;
     }
     public void setId(long id) {
         this.id = id;
     }
+
     // Getter y Setter para nombre
     public String getNombre() {
         return nombre;
@@ -64,6 +64,7 @@ public class UsuarioModel {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
     // Getter y Setter para apellidos
     public String getApellidos() {
         return apellidos;
@@ -71,6 +72,7 @@ public class UsuarioModel {
     public void setApellidos(String apellidos) {
         this.apellidos = apellidos;
     }
+
     // Getter y Setter para email
     public String getEmail() {
         return email;
@@ -78,6 +80,7 @@ public class UsuarioModel {
     public void setEmail(String email) {
         this.email = email;
     }
+
     // Getter y Setter para password
     public String getPassword() {
         return password;
@@ -85,11 +88,11 @@ public class UsuarioModel {
     public void setPassword(String password) {
         this.password = password;
     }
+
     // Getter y Setter para domicilio
     public DomicilioModel getDomicilio() {
         return domicilio;
     }
-
     public void setDomicilio(DomicilioModel domicilio) {
         this.domicilio = domicilio;
     }
@@ -98,18 +101,23 @@ public class UsuarioModel {
     public DatosFiscalesUsuarioModel getDatosfiscales() {
         return datosfiscales;
     }
-
     public void setDatosfiscales(DatosFiscalesUsuarioModel datosfiscales) {
         this.datosfiscales = datosfiscales;
     }
-    //Getter y setter
+
+    // Getter y Setter para facturas
     public List<FacturaModel> getFacturas() {
         return facturas;
     }
-    
     public void setFacturas(List<FacturaModel> facturas) {
         this.facturas = facturas;
     }
-    
 
+    // Getter y Setter para cfdi
+    public List<CfdiModel> getCfdi() {
+        return cfdi;
+    }
+    public void setCfdi(List<CfdiModel> cfdi) {
+        this.cfdi = cfdi;
+    }
 }
