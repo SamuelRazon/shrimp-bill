@@ -34,4 +34,54 @@ public class ComplementoIneModel {
 
     @OneToOne(mappedBy = "complemento_ine")
     private ComplementoIneEntidadesModel complineentidades;
+
+    /* Getters y setters */
+
+    // Getter y Setter para id
+    public long getId() {
+        return id;
+    }
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    // Getter y Setter para tipo_proceso
+    public String getTipoProceso() {
+        return tipo_proceso;
+    }
+    public void setTipoProceso(String tipo_proceso) {
+        this.tipo_proceso = tipo_proceso;
+    }
+
+    // Getter y Setter para tipo_comite
+    public String getTipoComite() {
+        return tipo_comite;
+    }
+    public void setTipoComite(String tipo_comite) {
+        this.tipo_comite = tipo_comite;
+    }
+
+    // Getter y Setter para clave_contabilidad
+    public String getClaveContabilidad() {
+        return clave_contabilidad;
+    }
+    public void setClaveContabilidad(String clave_contabilidad) {
+        this.clave_contabilidad = clave_contabilidad;
+    }
+
+    // Getter y Setter para factura
+    public FacturaModel getFactura() {
+        return factura;
+    }
+    public void setFactura(FacturaModel factura) {
+        this.factura = factura;
+    }
+
+    // Getter y Setter para complineentidades
+    public ComplementoIneEntidadesModel getComplineentidades() {
+        return complineentidades;
+    }
+    public void setComplineentidades(ComplementoIneEntidadesModel complineentidades) {
+        this.complineentidades = complineentidades;
+    }
 }

@@ -31,4 +31,46 @@ public class ComplementoIneEntidadesModel {
     @OneToOne
     @JoinColumn(name = "fk_complemento_ine")
     private ComplementoIneModel complementoine;
+
+    /* Getters y setters */
+
+    // Getter y Setter para id
+    public long getId() {
+        return id;
+    }
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    // Getter y Setter para entidad
+    public String getEntidad() {
+        return entidad;
+    }
+    public void setEntidad(String entidad) {
+        this.entidad = entidad;
+    }
+
+    // Getter y Setter para ambito
+    public String getAmbito() {
+        return ambito;
+    }
+    public void setAmbito(String ambito) {
+        this.ambito = ambito;
+    }
+
+    // Getter y Setter para clave_contabilidad
+    public String getClaveContabilidad() {
+        return clave_contabilidad;
+    }
+    public void setClaveContabilidad(String clave_contabilidad) {
+        this.clave_contabilidad = clave_contabilidad;
+    }
+
+    // Getter y Setter para complementoine
+    public ComplementoIneModel getComplementoine() {
+        return complementoine;
+    }
+    public void setComplementoine(ComplementoIneModel complementoine) {
+        this.complementoine = complementoine;
+    }
 }

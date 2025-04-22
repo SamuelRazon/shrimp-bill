@@ -24,13 +24,13 @@ public class UsuarioModel {
     @Column(nullable = false)
     private String nombre;
 
-    @Column(unique = true,nullable = false)
+    @Column(nullable = false)
     private String apellidos;
 
-    @Column(unique = true,nullable = false)
+    @Column(nullable = false)
     private String email;
 
-    @Column(unique = true,nullable = false)
+    @Column(nullable = false)
     private String password;
 
     /* Relaciones entre tablas */
