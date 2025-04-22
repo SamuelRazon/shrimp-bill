@@ -6,7 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -28,10 +28,10 @@ public class DatosFiscalesUsuarioModel {
     private String regimen_fiscal;
 
     @Column(nullable = false)
-    private String cfdi;
+    private String uso_cfdi;
 
     /* Relacion uno a uno */
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "fk_usuario")
     private UsuarioModel usuario;
 
@@ -69,12 +69,12 @@ public class DatosFiscalesUsuarioModel {
         this.regimen_fiscal = regimen_fiscal;
     }
 
-    // Getter y Setter para cfdi
+    // Getter y Setter para uso_cfdi
     public String getCfdi() {
-        return cfdi;
+        return uso_cfdi;
     }
-    public void setCfdi(String cfdi) {
-        this.cfdi = cfdi;
+    public void setCfdi(String uso_cfdi) {
+        this.uso_cfdi = uso_cfdi;
     }
 
     // Getter y Setter para usuario
