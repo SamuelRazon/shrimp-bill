@@ -1,3 +1,26 @@
 import { Routes } from '@angular/router';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
 
-export const routes: Routes = [];
+/*Se invocada cada uno de las rutas de los archivos que seran utilizados, por medio de 
+* Routes, en donde, sera luego invocado en el app.config.ts
+*/
+export const routes: Routes = [
+    {
+       path: 'dashboard',
+       component: DashboardComponent
+    },
+    {
+        path: 'login',
+        component: LoginComponent
+    },
+    {
+        path: 'register',
+        component: RegisterComponent
+    },
+    {
+        path: '**',
+        redirectTo: '/dashboard'
+    }
+];
