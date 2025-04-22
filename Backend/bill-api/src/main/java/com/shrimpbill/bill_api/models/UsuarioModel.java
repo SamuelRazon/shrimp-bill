@@ -37,10 +37,10 @@ public class UsuarioModel {
     @OneToOne(mappedBy = "usuario")
     private DomicilioModel domicilio;
 
-    @OneToOne(mappedBy = "usuario")
-    private DatosFiscalesUsuarioModel datosfiscales;
-
     /* Relacion uno a muchos */
+    @OneToOne(mappedBy = "usuario")
+    private List<DatosFiscalesUsuarioModel> datosfiscales;
+
     @OneToMany(mappedBy = "usuario")
     private List<FacturaModel> facturas;
 
@@ -98,10 +98,10 @@ public class UsuarioModel {
     }
 
     // Getter y Setter para datosfiscales
-    public DatosFiscalesUsuarioModel getDatosfiscales() {
+    public List<DatosFiscalesUsuarioModel> getDatosfiscales() {
         return datosfiscales;
     }
-    public void setDatosfiscales(DatosFiscalesUsuarioModel datosfiscales) {
+    public void setDatosfiscales(List<DatosFiscalesUsuarioModel> datosfiscales) {
         this.datosfiscales = datosfiscales;
     }
 
