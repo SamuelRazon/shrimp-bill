@@ -41,7 +41,7 @@
     position: absolute;
     width: 120px;
     height: 120px;
-    background-image: url(/Frontend/shrimp-bill-interface/src/app/imagenes/a.png);
+    background-image: url("/Frontend/shrimp-bill-interface/src/app/imagenes/a.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -122,9 +122,9 @@
   
 /* Style for the second button (Register) */
 .boton-dos {
-    flex: 1;
-    text-decoration: none;
-  }
+  flex: 1;
+  text-decoration: none;
+}
   
 /* Estilo para el botón azul: "Iniciar sesión" */
 .boton-uno {
@@ -142,7 +142,7 @@
 }
 
 .boton-uno:hover {
-  background-color: #1e4a9a;
+  background-color: #E37E1E;
 }
 
 /* Estilo para el botón blanco con borde azul: "Registrarse" */
