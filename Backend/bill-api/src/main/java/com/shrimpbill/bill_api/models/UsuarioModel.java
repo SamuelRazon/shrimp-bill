@@ -38,7 +38,7 @@ public class UsuarioModel {
     private DomicilioModel domicilio;
 
     /* Relacion uno a muchos */
-    @OneToOne(mappedBy = "usuario")
+    @OneToMany(mappedBy = "usuario")
     private List<DatosFiscalesUsuarioModel> datosfiscales;
 
     @OneToMany(mappedBy = "usuario")

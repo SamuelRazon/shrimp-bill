@@ -30,7 +30,7 @@ public class ComplementoIneEntidadesModel {
     /* Relaciones uno a uno */
     @OneToOne
     @JoinColumn(name = "fk_complemento_ine")
-    private ComplementoIneModel complementoine;
+    private ComplementoIneModel complemento_ine;
 
     /* Getters y setters */
 
@@ -68,9 +68,9 @@ public class ComplementoIneEntidadesModel {
 
     // Getter y Setter para complementoine
     public ComplementoIneModel getComplementoine() {
-        return complementoine;
+        return this.complemento_ine;
     }
     public void setComplementoine(ComplementoIneModel complementoine) {
-        this.complementoine = complementoine;
+        this.complemento_ine = complementoine;
     }
 }
