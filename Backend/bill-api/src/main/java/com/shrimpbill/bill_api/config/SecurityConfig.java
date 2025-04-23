@@ -14,21 +14,19 @@ public class SecurityConfig {
 
     @Bean
     SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+
+        
         http
-            // 1. Para POST desde Postman sin token 
             .csrf(csrf -> csrf.disable())
-            // 2. Configura quién necesita autenticarse
             .authorizeHttpRequests(auth -> auth
-                // rutas públicas
-                .requestMatchers("/api/usuarios/registro", "/api/usuarios/login").permitAll()
-                // cualquier otra ruta requiere autenticación
-                .anyRequest().authenticated()
+                // Solo restringes rutas específicas
+                .requestMatchers(/* Aqui las rutas que se restringen */"/cfdi/").authenticated()
+                // Todo lo demás es público
+                .anyRequest().permitAll()
             )
-            // 3. No mantenemos sesión en el servidor 
             .sessionManagement(sess -> sess
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
             )
-            // 4. Mantenemos el entry point para HTTP Basic (solo pruebas)
             .httpBasic(Customizer.withDefaults());
 
         return http.build();
