@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { FormsModule } from '@angular/forms';   
+import { RouterLink, Router } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons';
+import { LoginRequest, AuthService } from '../../services/auth.service';
+import { UserService } from '../../services/user.service';
 
 /*Este componente contiene el RouterLink, para permitir la interacción entre 
 * los componentes de inicio de sesión, en este caso, que es login y register, 
@@ -12,11 +15,37 @@ import { faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons';
 * invocas en la class LoginComponent*/
 @Component({
   selector: 'app-login',
-  imports: [RouterLink, FontAwesomeModule],
+  standalone: true,
+  imports: [RouterLink, FontAwesomeModule, FormsModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
     faEnvelope = faEnvelope;
     faLock = faLock;
+
+    form: LoginRequest = {
+          email: '',
+          password: ''
+    };
+    errorMessage = '';
+      
+    constructor(private authService: AuthService, private router: Router, private userService: UserService) {}
+      
+    onSubmit() {
+      this.authService.login(this.form).subscribe({
+        next: resp => {
+          localStorage.setItem('token', resp.token);
+          // Carga el perfil y guárdalo en un servicio de usuario
+          this.authService.profile().subscribe(profile => {
+            this.userService.setProfile(profile);
+            this.router.navigate(['/home']);
+          });
+        },
+         error: err => {
+          console.error(err);
+          this.errorMessage = 'El correo electronico o la contraseña son incorrectos: ' + err.error;
+        }
+      });
+    }
 }

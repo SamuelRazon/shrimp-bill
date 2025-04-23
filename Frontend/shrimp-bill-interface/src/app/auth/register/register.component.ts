@@ -1,6 +1,6 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
-import { FormsModule } from '@angular/forms';        // <-- importar aquí
+import { FormsModule } from '@angular/forms';        
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faEnvelope, faLock, faCircleUser } from '@fortawesome/free-solid-svg-icons';
 import { RegisterRequest, AuthService } from '../../services/auth.service';
