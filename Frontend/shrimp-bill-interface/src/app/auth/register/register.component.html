@@ -4,61 +4,80 @@
 <body class="body">
     <!--El diseño que lo centraliza -->
     <main class="principal">
-         <!--El diseño del logo -->
-        <article class="logo"></article>
-            <!--El diseño del formato de formulario y el texto -->
-            <article class="formulario">
-                <div class="texto">Formulario de registro</div>
-                <form action="" class="inputs">
-                    <div class="input">
-                        <fa-icon [icon]="faCircleUser" class="icon"></fa-icon>
-                        <input 
-                            type="text"
-                            placeholder="Nombre"
-                        >
-                    </div>
-
-                    <div class="input">
-                        <fa-icon [icon]="faEnvelope" class="icon"></fa-icon>
-                        <input
-                            type="email"
-                            placeholder="Correo electrónico"
-                        /> 
-                        <!-- Falta arriba el llamada de las cosas del back, que no tengo idea de como sea en Angular -->
-                    </div>
-
-                    <div class="input">
-                        <fa-icon [icon]="faLock" class="icon"></fa-icon>
-                        <input 
-                            type="password"
-                            placeholder="Contraseña"
-                        >
-                        <!-- Falta arriba el llamada de las cosas del back, que no tengo idea de como sea en Angular -->
-                    </div>
-
-                    <div class="input">
-                        <fa-icon [icon]="faLock" class="icon"></fa-icon>
-                        <input 
-                            type="password"
-                            placeholder="Confirmar contraseña"
-                        >
-                    </div>
-
-                    <div class="boton">
-                        <button class="boton-uno">
-                            Registrarse
-                        </button>
-
-                        <button class="boton-dos" routerLink="/login">
-                            Volver
-                        </button>  
-                    </div>
-
-                    <div class="olvidaste">
-                        ¿Olvidaste la contraseña? <br />
-                        <span>Haz click aquí</span>
-                    </div>
-                </form>
-            </article>
+      <!--El diseño del logo -->
+      <article class="logo"></article>
+      <!--El diseño del formato de formulario y el texto -->
+      <article class="formulario">
+        <div class="texto">Formulario de registro</div>
+  
+        <!-- Añadimos (ngSubmit) y #regForm para validación -->
+        <form (ngSubmit)="onSubmit()" #regForm="ngForm" class="inputs">
+          <div class="input">
+            <fa-icon [icon]="faCircleUser" class="icon"></fa-icon>
+            <input 
+              type="text"
+              name="nombre"
+              [(ngModel)]="form.nombre"
+              placeholder="Nombre"
+              required
+            >
+          </div>
+  
+          <div class="input">
+            <fa-icon [icon]="faEnvelope" class="icon"></fa-icon>
+            <input
+              type="email"
+              name="email"
+              [(ngModel)]="form.email"
+              placeholder="Correo electrónico"
+              required
+            /> 
+            <!-- Aquí traemos el email al back -->
+          </div>
+  
+          <div class="input">
+            <fa-icon [icon]="faLock" class="icon"></fa-icon>
+            <input 
+              type="password"
+              name="password"
+              [(ngModel)]="form.password"
+              placeholder="Contraseña"
+              required
+            >
+            <!-- Aquí traemos la contraseña al back -->
+          </div>
+  
+          <div class="input">
+            <fa-icon [icon]="faLock" class="icon"></fa-icon>
+            <input 
+              type="password"
+              name="confirmPassword"
+              [(ngModel)]="confirmPassword"
+              placeholder="Confirmar contraseña"
+              required
+            >
+          </div>
+  
+          <!-- Mostrar mensaje de error si hay -->
+          <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+  
+          <div class="boton">
+            <!-- Botón deshabilitado si el formulario no es válido -->
+            <button class="boton-uno" type="submit" [disabled]="regForm.invalid">
+              Registrarse
+            </button>
+  
+            <button class="boton-dos" routerLink="/login" type="button">
+              Volver
+            </button>  
+          </div>
+  
+          <div class="olvidaste">
+            ¿Olvidaste la contraseña? <br />
+            <span>Haz click aquí</span>
+          </div>
+        </form>
+      </article>
     </main>
-</body>
+  </body>
+  
