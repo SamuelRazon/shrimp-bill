@@ -1,0 +1,13 @@
+.boton-uno {
+    background-color: #EAA928;
+    color: white;
+    border: 1px solid #EAA928;
+    flex: 1;
+  
+    padding: 12px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}

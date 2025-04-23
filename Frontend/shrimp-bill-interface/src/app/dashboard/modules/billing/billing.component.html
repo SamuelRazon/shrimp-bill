@@ -1,1 +1,8 @@
-<p>billing works!</p>
+@switch (step) {
+    @case (1) {<app-select-service (sendNextStep)="nextstep()"></app-select-service>}
+    @case (2) {<app-data-service (sendNextStep)="nextstep()"></app-data-service>}
+    @case (3) {<app-fiscal-data (sendNextStep)="nextstep()"></app-fiscal-data>}
+    @case (4) {<app-check-data (sendNextStep)="nextstep()"></app-check-data>}
+
+}
+
