@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faEnvelope, faLock, faCircleUser } from '@fortawesome/free-solid-svg-icons';
 import { RegisterRequest, AuthService } from '../../services/auth.service';
+import { UserService } from '../../services/user.service';
+
 
 /*Este componente contiene el RouterLink, para permitir la interacción entre 
 * los componentes de inicio de sesión, en este caso, que es login y register, 
@@ -32,7 +34,7 @@ export class RegisterComponent {
     confirmPassword = '';
     errorMessage = '';
   
-    constructor(private authService: AuthService, private router: Router) {}
+    constructor(private authService: AuthService, private router: Router, private userService: UserService) {}
   
     onSubmit() {
       if (this.form.password !== this.confirmPassword) {
@@ -43,8 +45,11 @@ export class RegisterComponent {
         next: resp => {
           // Guardar token, e.g. localStorage
           localStorage.setItem('token', resp.token);
-          // Redirigir a dashboard u otra ruta
-          this.router.navigate(['/home']);
+          // Carga el perfil y guárdalo en un servicio de usuario
+          this.authService.profile().subscribe(profile => {
+            this.userService.setProfile(profile);
+            this.router.navigate(['/home']);
+          });
         },
         error: err => {
           console.error(err);
