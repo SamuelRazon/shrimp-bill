@@ -1,7 +1,9 @@
 package com.shrimpbill.bill_api.services;
 
+import com.shrimpbill.bill_api.dto.UsuarioDto;
 import com.shrimpbill.bill_api.models.UsuarioModel;
 import com.shrimpbill.bill_api.repositories.UsuarioRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -27,5 +29,15 @@ public class UsuarioService {
             return user;
         }
         return Optional.empty();
+    }
+
+    // Función para convertir un UsuarioModel a UsuarioDto
+    public UsuarioDto toDto(UsuarioModel usuario) {
+        return new UsuarioDto(
+            usuario.getId(),
+            usuario.getNombre(),
+            usuario.getApellidos(),
+            usuario.getEmail()
+        );
     }
 }

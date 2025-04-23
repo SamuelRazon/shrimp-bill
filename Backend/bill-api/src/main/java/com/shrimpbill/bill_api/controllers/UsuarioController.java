@@ -1,5 +1,6 @@
 package com.shrimpbill.bill_api.controllers;
 
+import com.shrimpbill.bill_api.dto.UsuarioDto;
 import com.shrimpbill.bill_api.models.UsuarioModel;
 import com.shrimpbill.bill_api.services.UsuarioService;
 
@@ -8,17 +9,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+
 @RestController
 @RequestMapping("/api/usuarios")
-@CrossOrigin(origins = "*") // Cambia "*" por tu dominio Angular si es necesario
+@CrossOrigin(origins = "*")
 public class UsuarioController {
 
     @Autowired
     private UsuarioService usuarioService;
 
     @PostMapping("/registro")
-    public ResponseEntity<?> registrar(@RequestBody UsuarioModel usuario) {
-        return ResponseEntity.ok(usuarioService.registrar(usuario));
+    public ResponseEntity<UsuarioDto> registrar(@RequestBody UsuarioModel usuario) {
+        UsuarioModel usuarioCreado = usuarioService.registrar(usuario);
+        UsuarioDto dto = usuarioService.toDto(usuarioCreado);
+        return ResponseEntity.ok(dto);
     }
 
     @PostMapping("/login")
@@ -26,10 +30,10 @@ public class UsuarioController {
         Optional<UsuarioModel> loginResult = usuarioService.login(usuario.getEmail(), usuario.getPassword());
     
         if (loginResult.isPresent()) {
-            return ResponseEntity.ok(loginResult.get());
+            UsuarioDto dto = usuarioService.toDto(loginResult.get());
+            return ResponseEntity.ok(dto);
         } else {
             return ResponseEntity.status(401).body("Credenciales inválidas");
         }
-    }      
-
+    }    
 }
