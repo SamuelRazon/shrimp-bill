@@ -1,1 +1,30 @@
-<p>dashboard works!</p>
+<!-- Componente encargado de ser dashboard, en donde, es la interacción de la página principal, 
+que contiene los demás componentes de facturación y recuperación, cada uno con sus respectivos componentes, 
+además del inicio de sesión -->
+
+<!-- Diseño de contenido principal -->
+<body class="estilo">
+    <app-modal></app-modal>
+    <!-- Contiene el diseño de los componentes -->
+    <main class="contenido">
+        <h1 class="texto-bienvenida">Bienvenido!</h1>
+        <h2 class="subtexto-bienvenida">Selecciona tu trámite</h2>
+
+        <!--Siendo el de generar factura-->
+        <article class="centrado">
+            <section class="generar-factura" routerLink="/billing">
+                <p>Generar factura</p>
+                <div class="icon"> 
+                    <fa-icon [icon]="faFileLines" class="icon-a"></fa-icon> 
+                </div>
+            </section>
+
+            <section class="recuperar-cdfi" routerLink="/recovery-cfdi">
+                <p>Recuperar CFDI</p>
+                <div class="icon"> 
+                    <fa-icon [icon]="faMagnifyingGlassDollar" class="icon-a"></fa-icon>
+                </div>
+            </section>
+        </article>
+    </main>
+</body>

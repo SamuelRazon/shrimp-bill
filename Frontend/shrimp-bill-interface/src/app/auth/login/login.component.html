@@ -1,12 +1,17 @@
-<!-- -->
-<header class="nar">
-    <body class="body">
-        <main class="principal">
-            <article class="logo"></article>
+<!--Componente encargado de ser el login -->
+
+<!--El diseño del contenido o body -->
+<body class="body">
+    <!--El diseño que lo centraliza -->
+    <main class="principal">
+        <!--El diseño del logo -->
+        <article class="logo"></article>
+            <!--El diseño del formato de formulario y el texto -->
             <article class="formulario">
                 <div class="texto">Iniciar sesión</div>
                 <form action="" class="inputs">
                     <div class="input">
+                        <fa-icon [icon]="faEnvelope" class="icon"></fa-icon>
                         <input
                             type="email"
                             placeholder="Correo electrónico"
@@ -15,6 +20,7 @@
                     </div>
 
                     <div class="input">
+                        <fa-icon [icon]="faLock" class="icon"></fa-icon>
                         <input 
                             type="password"
                             placeholder="Contraseña"
@@ -37,7 +43,6 @@
                         <span>Haz click aquí</span>
                     </div>
                 </form>
-            </article>
-        </main>
-    </body>
-</header>
+        </article>
+    </main>
+</body>

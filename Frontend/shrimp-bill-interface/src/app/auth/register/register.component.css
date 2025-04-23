@@ -51,8 +51,8 @@
   background-color: white;
   padding: 40px;
   display: flex;
-    flex-direction: column;
-    justify-content: center;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .texto{
@@ -78,7 +78,7 @@
     top: 50%;
     left: 12px;
     transform: translateY(-50%);
-    color: #335C94;
+    color: #EAA928;
     font-size: 16px;
     pointer-events: none;
 }

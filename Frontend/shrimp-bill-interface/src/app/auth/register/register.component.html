@@ -1,12 +1,17 @@
-<!-- -->
-<header class="nar">
-    <body class="body">
-        <main class="principal">
-            <article class="logo"></article>
+<!--Componente encargado de ser register -->
+
+<!--El diseño del contenido o body -->
+<body class="body">
+    <!--El diseño que lo centraliza -->
+    <main class="principal">
+         <!--El diseño del logo -->
+        <article class="logo"></article>
+            <!--El diseño del formato de formulario y el texto -->
             <article class="formulario">
                 <div class="texto">Formulario de registro</div>
                 <form action="" class="inputs">
                     <div class="input">
+                        <fa-icon [icon]="faCircleUser" class="icon"></fa-icon>
                         <input 
                             type="text"
                             placeholder="Nombre"
@@ -14,6 +19,7 @@
                     </div>
 
                     <div class="input">
+                        <fa-icon [icon]="faEnvelope" class="icon"></fa-icon>
                         <input
                             type="email"
                             placeholder="Correo electrónico"
@@ -22,6 +28,7 @@
                     </div>
 
                     <div class="input">
+                        <fa-icon [icon]="faLock" class="icon"></fa-icon>
                         <input 
                             type="password"
                             placeholder="Contraseña"
@@ -30,6 +37,7 @@
                     </div>
 
                     <div class="input">
+                        <fa-icon [icon]="faLock" class="icon"></fa-icon>
                         <input 
                             type="password"
                             placeholder="Confirmar contraseña"
@@ -52,6 +60,5 @@
                     </div>
                 </form>
             </article>
-        </main>
-    </body>
-</header>
+    </main>
+</body>

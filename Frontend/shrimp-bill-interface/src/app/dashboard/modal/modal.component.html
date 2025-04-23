@@ -1,0 +1,9 @@
+<div class="modal-background">
+  <!-- arriba le falta esto, pero lo marca como warning *ngIf="isVisible"-->
+    <div class="modal-content">
+      <button class="close-button" (click)="closeModal()">
+        <fa-icon [icon]="faTimes" (click)="closeModal()" ></fa-icon>
+      </button>
+      <p>Este es el contenido del modal.</p>
+    </div>
+</div>  

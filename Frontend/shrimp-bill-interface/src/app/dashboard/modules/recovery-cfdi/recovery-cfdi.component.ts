@@ -1,5 +1,11 @@
 import { Component } from '@angular/core';
 
+
+interface Food {
+  value: string;
+  viewValue: string;
+}
+
 @Component({
   selector: 'app-recovery-cfdi',
   imports: [],
@@ -7,5 +13,4 @@ import { Component } from '@angular/core';
   styleUrl: './recovery-cfdi.component.css'
 })
 export class RecoveryCfdiComponent {
-
 }
