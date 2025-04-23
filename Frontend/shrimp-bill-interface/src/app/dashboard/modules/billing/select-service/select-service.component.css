@@ -17,6 +17,7 @@
 
 .texto-bienvenida, .subtexto-bienvenida{
     text-align: center;
+    font-size: 26px;
 }
 
 
@@ -26,20 +27,6 @@
     width: 80%;
     margin-left: auto;
     margin-right: auto;
-}
-
-.botonsito{
-    display: block;
-    width: 160px;
-    height: 160px;
-    margin: 10px auto;
-    margin-top: 65px;
-
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    border: 1px solid #e8e6e6;
-    background-color: #fff;
-    cursor: pointer;
 }
 
 .icon{
@@ -55,8 +42,7 @@
     text-align: center;
     color: black;
     font-size: 65px;
-    margin-left: 55px;
-    margin-top: 12px;
+    margin-left: 50px;
 }
 
 .centrado p{
@@ -66,4 +52,33 @@
     font-size: 20px;
 }
 
+.volver{
+    display: flex;
+    background: white;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 100px;
+    cursor: pointer;
+}
 
+.ico{
+    width: 10px;
+    height: 10px;
+    text-align: center;
+    color: black;
+    font-size: 65px;
+}
+
+.acomodo-texto{
+    max-width: 400px;
+    margin-right: 300px;
+}
+
+.top{
+    display: flex;
+    flex-direction: row;
+    max-width: 860px;
+    margin: 10px auto;
+    justify-content: space-between;
+    align-items: center;
+}

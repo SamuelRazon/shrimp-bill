@@ -120,13 +120,13 @@
     background-color: #f0f2f5;
 }
   
-/* Style for the second button (Register) */
+
 .boton-dos {
   flex: 1;
   text-decoration: none;
 }
   
-/* Estilo para el botón azul: "Iniciar sesión" */
+
 .boton-uno {
   background-color: #EAA928;
   color: white;
@@ -145,7 +145,7 @@
   background-color: #E37E1E;
 }
 
-/* Estilo para el botón blanco con borde azul: "Registrarse" */
+
 .boton-dos {
   background-color: white;
   color: #E37E1E;

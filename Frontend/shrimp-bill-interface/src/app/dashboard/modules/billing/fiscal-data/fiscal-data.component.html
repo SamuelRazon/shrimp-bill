@@ -1,5 +1,49 @@
-<p>fiscal-data works!</p>
-<p>check-data works!</p>
-<button class="boton-uno" (click)="alertNextStep()">
-    siguiente
-</button>
+<div class="estilo">
+    <main class="contenido">
+        <section class="top">
+            <div class="volver" routerLink="/home">
+                <div class="volver-boton">
+                    <fa-icon [icon]="faAngleLeft" class="icon"></fa-icon> 
+                </div>
+            </div>
+
+            <div>
+                <h1>Ahora tus datos fiscales</h1>
+            </div>
+
+            <div class="volver">
+                <div class="volver-boton">
+                    <fa-icon [icon]="faBusSimple" class="icon"></fa-icon> 
+                </div>
+            </div>
+        </section>
+        
+        <article class="busqueda">
+            <section>
+                <p>RFC</p>
+                <div class="recuadro"></div>
+            </section>
+
+            <section>
+                <p>Razón social</p>
+                <div class="recuadro"></div>
+            </section>
+
+            <section>
+                <p>Uso CFDI</p>
+                <div class="recuadro"></div>
+            </section>
+        </article>
+        
+        <div class="atajos">
+            <div class="subir-datos">
+                <p>Añadir datos opcionales</p>
+            </div>
+            <div class="boton-in">
+                <button class="boton-uno" (click)="alertNextStep()">
+                    Siguiente
+                </button>
+            </div>
+        </div>
+    </main>
+</div>

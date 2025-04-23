@@ -1,4 +1,53 @@
-<p>data-service works!</p>
-<button class="boton-uno" (click)="alertNextStep()">
-    siguiente
-</button>
+<div class="estilo">
+    <main class="contenido">
+        <section class="top">
+            <div class="volver" routerLink="/home">
+                <div class="volver-boton">
+                     <fa-icon [icon]="faAngleLeft" class="icon"></fa-icon> 
+                </div>
+            </div>
+
+            <div>
+                <h1>Necesitas información de tu compra</h1>
+            </div>
+
+            <div class="volver">
+                <div class="volver-boton">
+                    <fa-icon [icon]="faBusSimple" class="icon"></fa-icon> 
+                </div>
+            </div>
+        </section>
+
+        <article class="busqueda">
+            <section>
+                <p>Token</p>
+                <div class="recuadro"></div>
+            </section>   
+
+            <section>
+                <p>RFC</p>
+                <div class="recuadro"></div>
+            </section> 
+
+            <p>¿O prefieres tomar un atajo?</p>
+
+            <div class="atajos">
+                <div class="subir-c">
+                    <fa-icon [icon]="faCloudArrowUp" class="subir-plus"></fa-icon>
+                    <p>Subir constancia</p>
+                </div>
+
+                <div class="subir-c">
+                    <fa-icon [icon]="faQrcode" class="subir-plus"></fa-icon> 
+                    <p>Escanear QR</p>
+                </div>
+            </div>
+        </article>
+
+        <div class="boton-inferior">
+            <button class="boton-uno" (click)="alertNextStep()">
+                Siguiente
+            </button>
+        </div>
+    </main>
+</div>
