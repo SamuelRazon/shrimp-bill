@@ -31,6 +31,11 @@ public class UsuarioService {
         return Optional.empty();
     }
 
+    /* Encontrar usuario a traves del email */
+    public Optional<UsuarioModel> findByEmail(String email) {
+        return usuarioRepository.findByEmail(email);
+    }
+
     // Función para convertir un UsuarioModel a UsuarioDto
     public UsuarioDto toDto(UsuarioModel usuario) {
         return new UsuarioDto(

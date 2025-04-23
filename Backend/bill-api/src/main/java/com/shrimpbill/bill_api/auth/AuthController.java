@@ -6,6 +6,10 @@ import com.shrimpbill.bill_api.services.UsuarioService;
 
 import java.util.Optional;
 
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -47,6 +51,14 @@ public class AuthController {
         } else {
             return ResponseEntity.status(401).body("Credenciales inválidas");
         }
+    }
+
+    @GetMapping("/me")
+    public ResponseEntity<UsuarioDto> me(Authentication auth) {
+        // 'auth.getName()' es el email extraído del token
+        UsuarioModel user = usuarioService.findByEmail(auth.getName())
+            .orElseThrow(() -> new UsernameNotFoundException("Usuario no existe"));
+        return ResponseEntity.ok(usuarioService.toDto(user));
     }
     
 }
