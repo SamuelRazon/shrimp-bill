@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faFileLines, faMagnifyingGlassDollar } from '@fortawesome/free-solid-svg-icons';
-import { ModalComponent } from './modal/modal.component';
+
+
 
 /*Este componente contiene el RouterLink, para permitir la interacción entre 
 * los componentes de ...*/
@@ -11,11 +9,10 @@ import { ModalComponent } from './modal/modal.component';
 * solo seleccionas de la página oficial (https://fontawesome.com/) el icono, lo importas y lo invocas en la class LoginComponent*/
 @Component({
   selector: 'app-dashboard',
-  imports: [RouterLink, FontAwesomeModule, ModalComponent],
+  imports: [],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent {
-  faFileLines = faFileLines;
-  faMagnifyingGlassDollar = faMagnifyingGlassDollar;
+  
 }
