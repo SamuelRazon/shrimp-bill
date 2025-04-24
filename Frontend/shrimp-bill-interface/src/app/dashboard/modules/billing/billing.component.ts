@@ -45,7 +45,6 @@ export class BillingComponent {
     }
   }
 
-
   checkSessionStorage(): void{
     const fiscalData = sessionStorage.getItem('fiscalData');
     if(fiscalData !== null &&  this.step === 3){
