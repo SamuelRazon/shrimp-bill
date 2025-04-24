@@ -24,10 +24,11 @@ public class SecurityConfig {
 
             // 2. Define reglas de autorización
             .authorizeHttpRequests(auth -> auth
-                // 2.1 Rutas públicas: registro y login de autenticación
+                // 2.1 Rutas públicas
                 .requestMatchers(
                     "/api/auth/registro",  // Endpoint para crear usuario + token
-                    "/api/auth/login"      // Endpoint para login + token
+                    "/api/auth/login",      // Endpoint para login + token
+                    "/api/facturas/sinusuario" // Endpoint para facturar sin estar registrado como usuario
                 ).permitAll()
 
                 // 2.3 Todas las demás peticiones requieren un JWT válido
