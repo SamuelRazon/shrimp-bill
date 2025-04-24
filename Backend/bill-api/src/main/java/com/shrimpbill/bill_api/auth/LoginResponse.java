@@ -1,6 +1,9 @@
 package com.shrimpbill.bill_api.auth;
 
 public class LoginResponse {
+    /**
+ * Representa la respuesta de autenticación, que incluye el JWT y los datos del usuario.
+ */
     private String token;
     private long id;
     private String nombre;

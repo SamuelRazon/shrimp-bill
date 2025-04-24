@@ -17,7 +17,16 @@ import java.io.IOException;
 public class JwtFilter extends OncePerRequestFilter {
     @Autowired
     private JwtUtil jwtUtil;
-
+    /**
+     * Aplica el filtrado de JWT a cada petición. Excluye las rutas públicas de login, registro y facturas sin usuario.
+     * Si encuentra un token válido, construye una autenticación de Spring sin roles y la añade al SecurityContext.
+     *
+     * @param req   {@link HttpServletRequest} de la petición entrante.
+     * @param res   {@link HttpServletResponse} de la respuesta.
+     * @param chain {@link FilterChain} para continuar con el procesamiento.
+     * @throws ServletException en errores de servlets.
+     * @throws IOException      en errores de I/O.
+     */
     @Override
     protected void doFilterInternal(HttpServletRequest req,
                                     HttpServletResponse res,

@@ -23,7 +23,15 @@ import com.shrimpbill.bill_api.repositories.UsuarioRepository;
 @RestController
 @RequestMapping("/api/facturas")
 public class FacturaAuthController {
-
+    /**
+     * Crea una nueva instancia de FacturaAuthController inyectando los repositorios necesarios.
+     *
+     * @param facturaRepo    repositorio de {@link FacturaModel}.
+     * @param datosFactRepo  repositorio de {@link DatosFiscalesFacturaModel}.
+     * @param domicilioRepo  repositorio de {@link DomicilioModel}.
+     * @param datosUsuRepo   repositorio de {@link DatosFiscalesUsuarioModel}.
+     * @param usuarioRepo    repositorio de {@link UsuarioModel}.
+     */
     private final FacturaRepository facturaRepo;
     private final DatosFiscalesFacturaRepository datosFactRepo;
     private final DomicilioRepository domicilioRepo;
@@ -41,7 +49,14 @@ public class FacturaAuthController {
         this.datosUsuRepo   = datosUsuRepo;
         this.usuarioRepo    = usuarioRepo;
     }
-
+    
+    /**
+     * Crea una factura completa con sus datos fiscales y de domicilio, para un usuario existente.
+     *
+     * @param dto {@link FacturaCompletaDto} con toda la información de factura, domicilio y datos fiscales.
+     * @return {@link ResponseEntity} con la {@link FacturaModel} recién creada y estado 201.
+     * @throws ResponseStatusException con BAD_REQUEST si el usuario no existe.
+     */
     @PostMapping("/conusuario")
     public ResponseEntity<?> creaFacturaConUsuario(
             @RequestBody FacturaCompletaDto dto) {
