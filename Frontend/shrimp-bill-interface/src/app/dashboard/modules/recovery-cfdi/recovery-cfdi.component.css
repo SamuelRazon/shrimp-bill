@@ -95,13 +95,6 @@
     font-size: 12px;
     margin-top: 5px;
   }
-  
-.recuadro input {
-    margin-top: 5px;
-    padding: 8px;
-    width: 85%;
-    border: 0px;
-}
 
 /* Aseguramos visibilidad de los íconos si hubiera superposición */
 .icon, .ico {
