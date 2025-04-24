@@ -8,5 +8,7 @@ import java.util.Optional;
 
 @Repository
 public interface FacturaRepository extends JpaRepository<FacturaModel, Long> {
-    Optional<FacturaModel> findByID(long id);
+    // Cambia findByID por findById (minúscula)
+    Optional<FacturaModel> findById(long id);
 }
+
