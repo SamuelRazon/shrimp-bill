@@ -1,5 +1,8 @@
 package com.shrimpbill.bill_api.dto;
 
+/**
+ * Datos que regresara y tomaran para el uso de la peticion de subida de una factura a traves de un usuario logeado
+ */
 public class FacturawithDatosFiscalesFacturaDto {
     // campos de FacturaModel
     private String token;

@@ -30,65 +30,80 @@
 		<java.version>24</java.version>
 	</properties>
 	<dependencies>
+		<!-- Proporciona integración de Spring Data JPA para persistencia ORM -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
+
+		<!-- Arranca un servicio web REST completo con Tomcat embebido -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web-services</artifactId>
 		</dependency>
+
+		<!-- Driver JDBC para conectar con MariaDB en tiempo de ejecución -->
 		<dependency>
 			<groupId>org.mariadb.jdbc</groupId>
 			<artifactId>mariadb-java-client</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+
+		<!-- Lombok para generación automática de getters/setters (opcional) -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
+
+		<!-- Utilidades para testing con Spring Boot -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<!-- Añade capa de seguridad y filtrado de peticiones -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
+
+		<!-- ZXing core: librería para generación/lectura de códigos QR y barras -->
 		<dependency>
 			<groupId>com.google.zxing</groupId>
 			<artifactId>core</artifactId>
 			<version>3.5.2</version>
 		</dependency>
+		<!-- Extensión de ZXing para entorno Java SE (BufferedImage, etc.) -->
 		<dependency>
 			<groupId>com.google.zxing</groupId>
 			<artifactId>javase</artifactId>
 			<version>3.5.2</version>
 		</dependency>
-		<!-- JJWT API -->
+
+		<!-- JJWT API: interfaz para creación y parseo de JWT -->
 		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
 			<artifactId>jjwt-api</artifactId>
 			<version>0.11.5</version>
 		</dependency>
-		<!-- JJWT Implementation (firma, parseo) -->
+		<!-- JJWT Impl: implementación de firma y verificación (runtime) -->
 		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
 			<artifactId>jjwt-impl</artifactId>
 			<version>0.11.5</version>
 			<scope>runtime</scope>
 		</dependency>
-		<!-- JJWT Jackson (para manejo de claims JSON) -->
+		<!-- JJWT Jackson: integración con Jackson para manejar claims en JSON -->
 		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
 			<artifactId>jjwt-jackson</artifactId>
 			<version>0.11.5</version>
 			<scope>runtime</scope>
 		</dependency>
-
 	</dependencies>
+
 
 	<build>
 		<plugins>

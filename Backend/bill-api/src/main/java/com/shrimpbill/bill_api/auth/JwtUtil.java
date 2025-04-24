@@ -18,13 +18,22 @@ public class JwtUtil {
 
     @Value("${jwt.expiration}")
     private long expirationMillis;
-
-    // Convertimos el Base64 en la Key que usará HS256
+        /**
+     * Genera la clave de firma a partir de la cadena Base64 configurada.
+     *
+     * @return {@link Key} para firmar/verificar JWT.
+     */
     private Key getSigningKey() {
         byte[] keyBytes = Decoders.BASE64.decode(secretKeyBase64);
         return Keys.hmacShaKeyFor(keyBytes);
     }
 
+    /**
+     * Crea un JWT con el subject = username, fecha de emisión ahora y fecha de expiración.
+     *
+     * @param username el identificador de usuario (email).
+     * @return token JWT firmado.
+     */
     public String generateToken(String username) {
         Date now = new Date();
         Date exp = new Date(now.getTime() + expirationMillis);
@@ -36,6 +45,12 @@ public class JwtUtil {
             .compact();
     }
 
+        /**
+     * Extrae el subject (username) de un JWT válido.
+     *
+     * @param token el JWT a parsear.
+     * @return username contenido en el token.
+     */
     public String extractUsername(String token) {
         return Jwts.parserBuilder()
             .setSigningKey(getSigningKey())
@@ -45,6 +60,12 @@ public class JwtUtil {
             .getSubject();
     }
 
+    /**
+     * Valida la integridad y expiración de un JWT.
+     *
+     * @param token el token JWT.
+     * @return true si es válido, false en caso contrario.
+     */
     public boolean validateToken(String token) {
         try {
             Jwts.parserBuilder()

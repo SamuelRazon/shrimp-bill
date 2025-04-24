@@ -10,12 +10,24 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+/**
+ * Configuración de seguridad de Spring Security para la API.
+ * Deshabilita CSRF (útil para APIs REST), configura las rutas públicas
+ * y protege el resto de endpoints con JWT, además de definir la política
+ * de sesión como stateless (sin estado).
+ */
 @Configuration
 public class SecurityConfig {
 
     @Autowired 
     private JwtFilter jwtFilter;
-
+    /**
+     * Construye la cadena de filtros de seguridad.
+     * 
+     * @param http objeto HttpSecurity para configurar CSRF, autorizaciones y sesiones.
+     * @return SecurityFilterChain construido.
+     * @throws Exception en caso de errores al aplicar la configuración.
+     */
     @Bean
     SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
@@ -24,10 +36,11 @@ public class SecurityConfig {
 
             // 2. Define reglas de autorización
             .authorizeHttpRequests(auth -> auth
-                // 2.1 Rutas públicas: registro y login de autenticación
+                // 2.1 Rutas públicas
                 .requestMatchers(
                     "/api/auth/registro",  // Endpoint para crear usuario + token
-                    "/api/auth/login"      // Endpoint para login + token
+                    "/api/auth/login",      // Endpoint para login + token
+                    "/api/facturas/sinusuario" // Endpoint para facturar sin estar registrado como usuario
                 ).permitAll()
 
                 // 2.3 Todas las demás peticiones requieren un JWT válido

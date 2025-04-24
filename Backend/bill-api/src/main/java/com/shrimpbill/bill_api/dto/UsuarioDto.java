@@ -1,5 +1,8 @@
 package com.shrimpbill.bill_api.dto;
 
+/**
+ * Informacion que se presentara del usuario en el json de la peticion
+ */
 public class UsuarioDto {
     private long id;
     private String nombre;

@@ -1,6 +1,9 @@
 package com.shrimpbill.bill_api.auth;
 
 public class LoginRequest {
+    /**
+ * Representa la solicitud de inicio de sesión con email y contraseña.
+ */
     private String email;
     private String password;
     

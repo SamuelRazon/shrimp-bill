@@ -13,7 +13,10 @@ import com.shrimpbill.bill_api.models.FacturaModel;
 import com.shrimpbill.bill_api.repositories.DatosFiscalesFacturaRepository;
 import com.shrimpbill.bill_api.repositories.FacturaRepository;
 
-// 3. Controlador sin autenticación
+/**
+ * Controlador REST para creación de facturas sin necesidad de autenticar al usuario.
+ * Permite generar una factura y sus datos fiscales asociados en un solo endpoint.
+ */
 @RestController
 @RequestMapping("/api/facturas")
 public class FacturaController {
@@ -21,12 +24,25 @@ public class FacturaController {
     private final FacturaRepository facturaRepo;
     private final DatosFiscalesFacturaRepository datosRepo;
 
+        /**
+     * Constructor con inyección de repositorios.
+     *
+     * @param facturaRepo repositorio para persistir {@link FacturaModel}.
+     * @param datosRepo   repositorio para persistir {@link DatosFiscalesFacturaModel}.
+     */
     public FacturaController(FacturaRepository facturaRepo,
                              DatosFiscalesFacturaRepository datosRepo) {
         this.facturaRepo = facturaRepo;
         this.datosRepo   = datosRepo;
     }
 
+        /**
+     * Crea una factura sin autenticación y guarda sus datos fiscales.
+     *
+     * @param dto DTO {@link FacturawithDatosFiscalesFacturaDto} con la información
+     *            de la factura y sus datos fiscales.
+     * @return ResponseEntity con status 201 y la factura completa guardada.
+     */
     @PostMapping("/sinusuario")
     public ResponseEntity<?> creaFacturaSinAuth(
         @RequestBody FacturawithDatosFiscalesFacturaDto dto) {
