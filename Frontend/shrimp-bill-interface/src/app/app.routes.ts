@@ -8,6 +8,8 @@ import { BillingComponent } from './dashboard/modules/billing/billing.component'
 import { HomeComponent } from './dashboard/modules/home/home.component';
 import { SelectServiceComponent } from './dashboard/modules/billing/select-service/select-service.component';
 import { DataServiceComponent } from './dashboard/modules/billing/data-service/data-service.component';
+import { TicketDataComponent } from './dashboard/modules/billing/ticket-data/ticket-data.component';
+
 
 /*Se invocada cada uno de las rutas de los archivos que seran utilizados, por medio de 
 * Routes, en donde, sera luego invocado en el app.config.ts
@@ -52,6 +54,10 @@ export const routes: Routes = [
     {
         path: 'dataservice',
         component: DataServiceComponent
+    },
+    {
+        path: 'ticket-data',
+        component: TicketDataComponent
     },
     {
         path: '**',
