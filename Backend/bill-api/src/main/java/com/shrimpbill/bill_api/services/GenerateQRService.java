@@ -22,15 +22,24 @@ public class GenerateQRService {
      * @param token Token de la compra realizada
      * @param date Fecha de la compra realizada
      * @param time Hora de la compra realizada
+     * @param service Tipo de servicio a facturar
      * @return bytes que contienen la imagen del qr generado
      */
-    public byte[] generateQr(String token, String date, String time){
-        String data = String.format("token=%s&date=%s&fecha%s", token, date, time);
-        String url;
-        try { // Esto esta mal hecho
-            url = "https://localhost:8080/verficacion?" + URLEncoder.encode(data, "UTF-8"); 
-            //Remplazar URL por el dominio adecuado
+    public byte[] generateQr(String token, String date, String time, String service){
+        String data;
+        try {
+            data = String.format("token=%s&date=%s&fecha%s&service%s", 
+            URLEncoder.encode(token, "UTF-8"), 
+            URLEncoder.encode(date, "UTF-8"), 
+            URLEncoder.encode(time, "UTF-8"));
         } catch (UnsupportedEncodingException e) {
+            data = "patito"; //soy conciente de que esto esta curioso
+            System.out.println("Esto nunca deberia pasar");
+        }
+        String url;
+        try { 
+            url = "https://localhost:8080/verficacion?" + URLEncoder.encode(data, "UTF-8"); 
+        } catch (UnsupportedEncodingException e) { // Etoy nunca va a pasar
             url = null;
             e.printStackTrace();
         }

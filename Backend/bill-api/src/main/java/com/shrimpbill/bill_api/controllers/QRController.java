@@ -30,8 +30,9 @@ public class QRController {
         String token = allParams.get("token");
         String date = allParams.get("date");
         String time = allParams.get("time");
+        String service = allParams.get("service");
 
-        byte[] qr = qrService.generateQr(token, date, time);
+        byte[] qr = qrService.generateQr(token, date, time, service);
         HttpHeaders headers = new org.springframework.http.HttpHeaders();
         headers.setContentType(MediaType.IMAGE_PNG);
 

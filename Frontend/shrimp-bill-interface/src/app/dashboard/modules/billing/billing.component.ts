@@ -21,10 +21,36 @@ import { CheckDataComponent } from "./check-data/check-data.component";
 export class BillingComponent {
   step = 1
 
+  ngOnInit(): void {
+    if(sessionStorage.getItem('qrData') && this.step === 1){
+      const qrData = sessionStorage.getItem('qrData');
+      if (qrData !== null) {
+        sessionStorage.setItem('serviceData', qrData);
+        this.step = 3;
+        sessionStorage.removeItem('qrData');
+      }
+      
+    }
+    this.checkSessionStorage();
+  }
+
   nextstep(){
     if(this.step <= 5){
-      this.step = this.step + 1
-      console.log("Neext recibido!")
+      console.log(this.step);
+      this.step = this.step + 1;
+      this.checkSessionStorage();
+      
     }
+    
+  }
+
+
+  checkSessionStorage(): void{
+    const fiscalData = sessionStorage.getItem('fiscalData');
+    if(fiscalData !== null &&  this.step === 3){
+      this.step = 4;
+    }
+
+    return
   }
 }

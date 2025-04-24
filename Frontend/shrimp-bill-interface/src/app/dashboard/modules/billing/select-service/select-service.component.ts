@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faBusSimple, faAppleWhole, faBox, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
+import { faBusSimple, faAppleWhole, faBox, faAngleLeft, faQrcode } from '@fortawesome/free-solid-svg-icons';
 import { ScanQrComponent } from "./scan-qr/scan-qr.component";
 
 @Component({
@@ -45,4 +45,5 @@ export class SelectServiceComponent {
   faAppleWhole = faAppleWhole;
   faBox = faBox;
   faAngleLeft = faAngleLeft;
+  faQrcode = faQrcode;
 }
