@@ -1,11 +1,42 @@
 <div class="estilo">
     <main class="contenido">
         <section class="top">
+            <div class="volver" routerLink="/select-service">
+                <div class="volver-boton">
+                     <fa-icon [icon]="faAngleLeft" class="icon"></fa-icon> 
+                </div>
+            </div>
 
+            <div>
+                <h1>Valida tus datos</h1>
+            </div>
+
+            <div class="volver">
+                <div class="volver-boton">
+                  
+                </div>
+            </div>
         </section>
-
-        <button class="boton-uno" (click)="alertNextStep()">
-            Registrarse
-        </button>
+            
+        <!--  -->
+        <article class="busqueda">
+            <h2>Datos del servicio</h2>
+            <p><strong>Token: </strong> {{entriesService.token}}</p>
+            <p><strong>Fecha: </strong> {{entriesService.date}}</p>
+            <p><strong>Hora: </strong> {{entriesService.time}}</p>
+            <p><strong>Servicio: </strong> {{entriesService.service}}</p>
+            <h2>Datos fiscales</h2>
+            <p><strong>RFC: </strong> {{entriesFiscal.rfc}}</p>
+            <p><strong>Razón social: </strong> {{entriesFiscal.razonSocial}}</p>
+            <p><strong>Uso del CFDI: </strong> {{entriesFiscal.usoCfdi}}</p>
+            <p><strong>Regimen fiscal: </strong> {{entriesFiscal.regimenFiscal}}</p>
+            <p><strong>Correo electrónico: </strong> {{entriesFiscal.correoElectronico}}</p>
+            <p><strong>Código postal: </strong> {{entriesFiscal.codigoPostal}}</p>
+        </article>
+        <div class="boton-inferior">
+            <button class="boton-uno" (click)="alertNextStep()">
+                Generar factura
+            </button>
+        </div>
     </main>
 </div>

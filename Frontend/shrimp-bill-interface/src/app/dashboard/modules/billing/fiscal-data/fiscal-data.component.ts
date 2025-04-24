@@ -25,6 +25,31 @@ export class FiscalDataComponent {
     this.sendNextStep.emit()
   }
 
+  // Propiedades para los datos fiscales
+  rfc: string = '';
+  razonSocial: string = '';
+  usoCfdi: string = '';
+  regimenFiscal: string = '';
+  correo: string = '';
+  codigoPostal: string = '';
+
+  // Método para guardar los datos en sessionStorage
+  saveFiscalData() {
+    const fiscalData = {
+      rfc: this.rfc,
+      razonSocial: this.razonSocial,
+      usoCfdi: this.usoCfdi,
+      regimenFiscal: this.regimenFiscal,
+      correo: this.correo,
+      codigoPostal: this.codigoPostal
+    };
+
+    // Guardar en sessionStorage
+    sessionStorage.setItem('fiscalData', JSON.stringify(fiscalData));
+    console.log('Datos fiscales guardados:', fiscalData);
+    this.alertNextStep();
+  }
+
   faAngleLeft = faAngleLeft;
   faBusSimple= faBusSimple;
   faCircleQuestion = faCircleQuestion;

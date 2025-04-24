@@ -1,0 +1,95 @@
+.top{
+    display: flex;
+    flex-direction: row;
+    max-width: 600px;
+    margin: 10px auto;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contenido-extenso{
+    width: 100%;
+    height: 780px;
+    margin : 280px;
+    margin-top: 510px;
+    background-color: #fff;
+    flex-direction: column;
+}
+
+.volver{
+    display: flex;
+    background: white;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 100px;
+    cursor: pointer;
+}
+
+.icon{
+    width: 10px;
+    height: 10px;
+    text-align: center;
+    color: black;
+    font-size: 65px;
+}
+
+.atajos{
+    display: flex;
+    max-width: 760px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.subir-datos{
+    display: flex;
+    line-height: 15px;
+    width: 200px;
+    height: 45px;
+    margin-bottom: 15px;
+    text-align: center;
+    justify-content: center;
+
+    background-color: white;
+    color: #880E0E;
+    border: 1px solid #880E0E;
+    cursor: pointer;
+    transition: all .4s ease-in-out;
+}
+
+.subir-datos:hover {
+    background-color: #f0f2f5;
+}
+
+.subir-datos{
+    font-size: 16px;
+    text-align: center;
+    margin-top: 16px;
+    margin-left: 190px;
+}
+
+.boton-in{
+    display: flex;
+    max-width: 60px;
+    margin-top: 10px;
+    align-items: center;
+}
+
+.busqueda section {
+    margin-bottom: 20px;
+}
+
+.ico{
+    font-size: 18px;
+    color: black;
+}
+
+.tipo-servicio{
+    display: flex;
+    align-items: center;
+}
+
+.tipo-servicio p{
+    margin-right: 14px;
+    font-size: 16px;
+    margin: 0;
+}

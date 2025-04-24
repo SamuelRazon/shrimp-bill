@@ -5,6 +5,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faEnvelope, faLock, faCircleUser } from '@fortawesome/free-solid-svg-icons';
 import { RegisterRequest, AuthService } from '../../services/auth.service';
 import { UserService } from '../../services/user.service';
+import { CommonModule } from '@angular/common';
 
 
 /*Este componente contiene el RouterLink, para permitir la interacción entre 
@@ -16,7 +17,7 @@ import { UserService } from '../../services/user.service';
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [RouterLink,  FontAwesomeModule, FormsModule],
+  imports: [RouterLink,  FontAwesomeModule, FormsModule, CommonModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })
