@@ -31,6 +31,9 @@ public class DatosFiscalesFacturaModel {
     private String cfdi;
 
     @Column(nullable = false)
+    private String email;
+
+    @Column(nullable = false)
     private String codigo_postal;
 
     @Column(nullable = false)
@@ -102,6 +105,14 @@ public class DatosFiscalesFacturaModel {
     }
     public void setCfdi(String cfdi) {
         this.cfdi = cfdi;
+    }
+
+    // Getter y Setter para cfdi
+    public String getEmail() {
+        return this.email;
+    }
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     // Getter y Setter para codigo_postal
