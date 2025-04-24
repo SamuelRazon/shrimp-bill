@@ -37,6 +37,7 @@ export class RecoveryCfdiComponent {
 
   // Verificar si el formulario es válido
   get isFormValid() {
+    console.log(this.recoveryForm.valid)
     return this.recoveryForm.valid;
   }
 

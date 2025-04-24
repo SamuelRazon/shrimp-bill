@@ -35,6 +35,18 @@
                     <fa-icon [icon]="faBox" class="icon-a"></fa-icon>
                 </div>
             </section>
+
+            <section class="botonsito" (click)="toggleScanQr()">
+                <p>Tengo un qr</p>
+                <div class="icon"> 
+                    <fa-icon [icon]="faBox" class="icon-a"></fa-icon>
+                </div>
+            </section>
+
+            @if (showScanQr) {<app-scan-qr></app-scan-qr>}
         </article>
     </main>
+    @if (noCameraError && showScanQr){
+        <p>No se detectó ninguna cámara. Por favor, conecta una cámara para escanear el QR.</p>
+    }
 </div>
