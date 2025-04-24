@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.shrimpbill.bill_api.dto.FacturawithDatosFiscalesFacturaDto;
+import com.shrimpbill.bill_api.models.DatosFiscalesFacturaModel;
 import com.shrimpbill.bill_api.models.FacturaModel;
 import com.shrimpbill.bill_api.repositories.DatosFiscalesFacturaRepository;
 import com.shrimpbill.bill_api.repositories.FacturaRepository;
@@ -26,19 +27,14 @@ public class FacturaController {
         this.datosRepo   = datosRepo;
     }
 
-    @PostMapping("/crea-sin-auth")
+    @PostMapping("/sinusuario")
     public ResponseEntity<?> creaFacturaSinAuth(
-            @RequestBody FacturawithDatosFiscalesFacturaDto dto) {
+        @RequestBody FacturawithDatosFiscalesFacturaDto dto) {
         // 1. Crear y guardar factura
         FacturaModel fact = new FacturaModel();
         fact.setToken(dto.getToken());
         fact.setCsd_emisor(dto.getCsdEmisor());
         fact.setQr_datos(dto.getQrDatos());
-        // (opcional) enlazar usuario si viene
-        if (dto.getUsuarioId() != null) {
-            usuarioRepo.findById(dto.getUsuarioId())
-                .ifPresent(fact::setUsuario);
-        }
         FacturaModel facturaGuardada = facturaRepo.save(fact);
 
         // 2. Crear y guardar datos fiscales apuntando a la factura recién creada
