@@ -61,3 +61,23 @@
     width: 25px;
     height: 25px;
 }
+
+.busqueda section {
+    margin-bottom: 20px;
+}
+
+.ico{
+    font-size: 18px;
+    color: black;
+}
+
+.tipo-servicio{
+    display: flex;
+    align-items: center;
+}
+
+.tipo-servicio p{
+    margin-right: 14px;
+    font-size: 16px;
+    margin: 0;
+}

@@ -4,6 +4,26 @@
       <button class="close-button" (click)="closeModal()">
         <fa-icon [icon]="faTimes" (click)="closeModal()" ></fa-icon>
       </button>
-      <p>Este es el contenido del modal.</p>
+      <div class="estilo">
+        <main class="contenido">
+          <h1 class="texto-bienvenida">Bienvenido a Shrimp Bill</h1>
+
+          <article class="centrado">
+            <section class="generar-factura" routerLink="/billing">
+              <p>Generar factura</p>
+              <div class="icon"> 
+                <!-- <fa-icon [icon]="faFileLines" class="icon-a"></fa-icon>   -->
+              </div>
+          </section>
+
+          <section class="recuperar-cdfi" routerLink="/recovery-cfdi">
+              <p>Recuperar CFDI</p>
+              <div class="icon"> 
+                <!--<fa-icon [icon]="faMagnifyingGlassDollar" class="icon-a"></fa-icon>-->
+              </div>
+          </section>
+          </article>
+        </main>
+      </div>
     </div>
 </div>  }

@@ -44,3 +44,12 @@ li{
 .inicio:hover {
     background-color: #ab5c12;
 }
+
+.icon{
+    width: 10px;
+    height: 10px;
+    text-align: center;
+    color: #880E0E;
+    font-size: 15px;
+    cursor: pointer;
+}

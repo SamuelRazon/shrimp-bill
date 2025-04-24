@@ -1,7 +1,7 @@
 <div class="estilo">
-    <main class="contenido">
+    <main class="contenido-extenso">
         <section class="top">
-            <div class="volver" routerLink="/home">
+            <div class="volver" routerLink="/dataservice">
                 <div class="volver-boton">
                     <fa-icon [icon]="faAngleLeft" class="icon"></fa-icon> 
                 </div>
@@ -20,17 +20,53 @@
         
         <article class="busqueda">
             <section>
-                <p>RFC</p>
+                <div class="tipo-servicio">
+                    <p>RFC</p>
+                    <fa-icon [icon]="faCircleQuestion" class="ico"></fa-icon>
+                </div>
                 <div class="recuadro"></div>
             </section>
 
             <section>
-                <p>Razón social</p>
+                <div class="tipo-servicio">
+                    <p>Razón social</p>
+                    <fa-icon [icon]="faCircleQuestion" class="ico"></fa-icon>
+                </div>
                 <div class="recuadro"></div>
             </section>
 
             <section>
-                <p>Uso CFDI</p>
+                <div class="tipo-servicio">
+                    <p>Uso CFDI</p>
+                    <fa-icon [icon]="faCircleQuestion" class="ico"></fa-icon>
+                </div>
+                <div class="recuadro"></div>
+            </section>
+
+            <section>
+                <div class="tipo-servicio">
+                    <p>Régimen fiscal</p>
+                    <fa-icon [icon]="faCircleQuestion" class="ico"></fa-icon>
+                </div>
+
+                <div class="recuadro"></div>
+            </section>
+
+            <section>
+                <div class="tipo-servicio">
+                    <p>Correo electrónico</p>
+                    <fa-icon [icon]="faCircleQuestion" class="ico"></fa-icon>
+                </div>
+            
+                <div class="recuadro"></div>
+            </section>
+
+            <section>
+                <div class="tipo-servicio">
+                    <p>Código postal</p>
+                    <fa-icon [icon]="faCircleQuestion" class="ico"></fa-icon>
+                </div>
+
                 <div class="recuadro"></div>
             </section>
         </article>

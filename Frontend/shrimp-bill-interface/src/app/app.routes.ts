@@ -6,6 +6,8 @@ import { ModalComponent } from './dashboard/modal/modal.component';
 import { RecoveryCfdiComponent } from './dashboard/modules/recovery-cfdi/recovery-cfdi.component';
 import { BillingComponent } from './dashboard/modules/billing/billing.component';
 import { HomeComponent } from './dashboard/modules/home/home.component';
+import { SelectServiceComponent } from './dashboard/modules/billing/select-service/select-service.component';
+import { DataServiceComponent } from './dashboard/modules/billing/data-service/data-service.component';
 
 /*Se invocada cada uno de las rutas de los archivos que seran utilizados, por medio de 
 * Routes, en donde, sera luego invocado en el app.config.ts
@@ -42,6 +44,14 @@ export const routes: Routes = [
     {
         path: 'recovery-cfdi',
         component: RecoveryCfdiComponent
+    },
+    {
+        path: 'select-service',
+        component: SelectServiceComponent
+    },
+    {
+        path: 'dataservice',
+        component: DataServiceComponent
     },
     {
         path: '**',
