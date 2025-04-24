@@ -1,4 +1,6 @@
+import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Output } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faAngleLeft, faBusSimple, faCircleQuestion} from '@fortawesome/free-solid-svg-icons';
@@ -13,7 +15,7 @@ import { faAngleLeft, faBusSimple, faCircleQuestion} from '@fortawesome/free-sol
 * solo seleccionas de la página oficial (https://fontawesome.com/) el icono, lo importas y lo invocas en la class LoginComponent*/
 @Component({
   selector: 'app-fiscal-data',
-  imports: [FontAwesomeModule, RouterLink],
+  imports: [FontAwesomeModule, RouterLink, CommonModule, FormsModule],
   templateUrl: './fiscal-data.component.html',
   styleUrl: './fiscal-data.component.css'
 })

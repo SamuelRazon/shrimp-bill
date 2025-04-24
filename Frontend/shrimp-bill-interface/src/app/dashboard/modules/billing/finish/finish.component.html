@@ -1,0 +1,27 @@
+<div class="estilo">
+    <!-- Contiene el diseño de los componentes -->
+    <main class="contenido">
+        <section class="top">
+            <div class="volver" routerLink="/home">
+                <div class="volver-boton">
+                    <fa-icon [icon]="faAngleLeft" class="ico"></fa-icon>
+                </div>
+            </div>
+            <div class="volver" routerLink="/home">
+                <div class="volver-boton">
+                </div>
+            </div>
+        </section>
+        <article class="busqueda">
+            <h1 class="texto-bienvenida">¡Haz terminado!</h1>
+            <h2 class="subtexto-bienvenida">Tu factura llegara a tu correo en unos minutos</h2>
+            <div class="boton-inferior">
+                <button class="boton-uno" (click)="alertNextStep()">
+                    Siguiente
+                </button>
+            </div>
+        </article>
+
+    </main>
+    
+</div>

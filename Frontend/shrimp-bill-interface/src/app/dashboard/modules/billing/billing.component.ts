@@ -3,7 +3,8 @@ import { SelectServiceComponent } from "./select-service/select-service.componen
 import { DataServiceComponent } from "./data-service/data-service.component";
 import { FiscalDataComponent } from "./fiscal-data/fiscal-data.component";
 import { CheckDataComponent } from "./check-data/check-data.component";
-
+import { ActivatedRoute, Router } from '@angular/router';
+import { FinishComponent } from "./finish/finish.component";
 /**
  * Se encarga de la demostración de ser el avanzador entre los archivos con una invocación, 
  * que usa OutPut para ser llamados, de esa forma, se establece quien va de quien, y solamente
@@ -14,11 +15,13 @@ import { CheckDataComponent } from "./check-data/check-data.component";
 * solo seleccionas de la página oficial (https://fontawesome.com/)*/
 @Component({
   selector: 'app-billing',
-  imports: [SelectServiceComponent, DataServiceComponent, FiscalDataComponent, CheckDataComponent],
+  imports: [SelectServiceComponent, DataServiceComponent, FiscalDataComponent, CheckDataComponent, FinishComponent],
   templateUrl: './billing.component.html',
   styleUrl: './billing.component.css'
 })
 export class BillingComponent {
+  constructor(private route: ActivatedRoute, private router: Router) {} 
+  Router = Router
   step = 1
 
   ngOnInit(): void {
@@ -39,9 +42,7 @@ export class BillingComponent {
       console.log(this.step);
       this.step = this.step + 1;
       this.checkSessionStorage();
-      
     }
-    
   }
 
 
@@ -53,4 +54,9 @@ export class BillingComponent {
 
     return
   }
+
+  goHome(){
+    this.router.navigate(['/home']);
+  }
+  
 }

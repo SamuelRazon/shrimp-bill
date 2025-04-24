@@ -1,0 +1,83 @@
+.estilo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80vh;
+    width: auto;
+    background-color: #fff;
+}
+
+.contenido{
+    width: 100%;
+    height: 560px;
+    margin : auto;
+    background-color: #fff;
+    flex-direction: column;
+}
+
+.texto-bienvenida, .subtexto-bienvenida{
+    text-align: center;
+    font-size: 26px;
+}
+
+.centrado{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.icon{
+    width: 65px;
+    height: 60px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.icon-a{
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    color: black;
+    font-size: 65px;
+    margin-left: 50px;
+}
+
+.centrado p{
+    margin-top: 5px;
+    text-align: center;
+    gap: 15px;
+    font-size: 20px;
+}
+
+.volver{
+    display: flex;
+    background: white;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 100px;
+    cursor: pointer;
+}
+
+.ico{
+    width: 10px;
+    height: 10px;
+    text-align: center;
+    color: black;
+    font-size: 65px;
+}
+
+.acomodo-texto{
+    max-width: 400px;
+    margin-right: 300px;
+}
+
+.top{
+    display: flex;
+    flex-direction: row;
+    max-width: 860px;
+    margin: 10px auto;
+    justify-content: space-between;
+    align-items: center;
+}
