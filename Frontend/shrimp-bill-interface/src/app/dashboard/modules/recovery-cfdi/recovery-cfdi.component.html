@@ -17,23 +17,46 @@
         
         <article class="busqueda">
             <section>
-                <p>Tipo de servicio</p>
-                <div class="recuadro"></div>
+                <div class="tipo-servicio">
+                    <p>Tipo de servicio</p>
+                    <fa-icon [icon]="faCircleQuestion" class="ico"></fa-icon>
+                </div>
+                <div class="recuadro">
+                    <input formControlName="tipoServicio" type="text" placeholder="Introduce el tipo de servicio" />
+                  
+                    <div *ngIf="!recoveryForm.get('tipoServicio')?.valid && recoveryForm.get('tipoServicio')?.touched" class="error-message">Este campo es obligatorio</div>
+                </div>
             </section>
 
             <section >
-                <p>Token</p>
-                <div class="recuadro"></div>
+                <div class="tipo-servicio">
+                    <p>Token</p>
+                    <fa-icon [icon]="faCircleQuestion" class="ico"></fa-icon>
+                </div>
+                <div class="recuadro">
+                    <input formControlName="token" type="text" placeholder="Introduce el token" />
+                    <div *ngIf="!recoveryForm.get('token')?.valid && recoveryForm.get('token')?.touched" class="error-message">Este campo es obligatorio</div>
+                </div>
             </section>
 
             <section>
-                <p>RFC</p>
-                <div class="recuadro"></div>
+                <div class="tipo-servicio">
+                    <p>RFC</p>
+                    <fa-icon [icon]="faCircleQuestion" class="ico"></fa-icon>
+                </div>
+                <div class="recuadro">
+                    <input formControlName="rfc" type="text" placeholder="Introduce el RFC" />
+                    <div *ngIf="!recoveryForm.get('rfc')?.valid && recoveryForm.get('rfc')?.touched" class="error-message">Este campo es obligatorio</div>
+                </div>
             </section>
         </article>
 
         <div class="siguiente"> 
-            <button class="boton-uno">
+            <button 
+                class="boton-uno"
+                [disabled]="!isFormValid"
+                (click)="onButtonClick()"
+                [class.clicked]="clicked">
                 Buscar
             </button>
         </div>

@@ -7,6 +7,15 @@
     align-items: center;
 }
 
+.contenido-extenso{
+    width: 100%;
+    height: 780px;
+    margin : 280px;
+    margin-top: 510px;
+    background-color: #fff;
+    flex-direction: column;
+}
+
 .volver{
     display: flex;
     background: white;
@@ -36,6 +45,7 @@
     line-height: 15px;
     width: 200px;
     height: 45px;
+    margin-bottom: 15px;
     text-align: center;
     justify-content: center;
 
@@ -62,4 +72,24 @@
     max-width: 60px;
     margin-top: 10px;
     align-items: center;
+}
+
+.busqueda section {
+    margin-bottom: 20px;
+}
+
+.ico{
+    font-size: 18px;
+    color: black;
+}
+
+.tipo-servicio{
+    display: flex;
+    align-items: center;
+}
+
+.tipo-servicio p{
+    margin-right: 14px;
+    font-size: 16px;
+    margin: 0;
 }
