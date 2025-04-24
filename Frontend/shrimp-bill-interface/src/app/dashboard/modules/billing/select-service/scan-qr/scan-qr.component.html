@@ -1,0 +1,6 @@
+<p>scan-qr works!</p>
+<zxing-scanner 
+  [start]="true"
+  [formats]="[BarcodeFormat.QR_CODE]"
+  (scanSuccess)="onCodeResult($event)">
+</zxing-scanner>
