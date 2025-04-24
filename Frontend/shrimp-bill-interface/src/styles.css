@@ -80,8 +80,15 @@ body{
 .recuadro{
     width: auto;
     height: 45px;
+}
+
+.recuadro input{
+    height: auto;
+    margin: 0;
     border: #000  solid 1px;
     border-radius: 3px;
+    padding: 14px;
+    width: 95%;
 }
 
 .busqueda{
